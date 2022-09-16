@@ -26,10 +26,10 @@ function wishMe() {
 }
 
 window.addEventListener("load", () => {
-  speak("Activating Inertia");
+  speak("Activating you me");
   // speak("One button to rule them all");
 
-  // wishMe();
+  wishMe();
   // speak("going online");
 });
 
@@ -59,7 +59,7 @@ function speakThis(message) {
     const finalText = "I'm great thank you, how may i help you";
     speech.text = finalText;
   } else if (message.includes("your name")) {
-    const finalText = "My name is Inertia";
+    const finalText = "My name is You me";
     speech.text = finalText;
   } else if (message.includes("my name")) {
     const finalText = "you are Chris, of course";
