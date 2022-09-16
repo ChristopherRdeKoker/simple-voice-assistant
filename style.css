@@ -30,7 +30,7 @@
 }
 
 .main .image-container .image img {
-  width: 170px;
+  width: 80%;
   align-items: center;
 }
 
@@ -46,6 +46,7 @@
 .main .image-container p {
   color: #324042;
   text-align: center;
+  font-size: 20px;
   margin-bottom: 10px;
 }
 
@@ -54,7 +55,7 @@
   justify-content: center;
   align-items: center;
   width: 40vw;
-  height: 50px;
+  height: 65px;
   border-radius: 20px;
   background: rgba(202, 253, 255, 0.5);
 }
@@ -73,12 +74,12 @@
 }
 
 .main .input .talk i {
-  font-size: 20px;
+  font-size: 30px;
   color: #53f263d1;
 }
 
 .main .input .content {
   color: #b7eeb7;
-  font-size: 15px;
+  font-size: 25px;
   margin-right: 20px;
 }

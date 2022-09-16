@@ -69,6 +69,12 @@ function speakThis(message) {
     window.open(`https://google.com`, "_blank");
     const finalText = "opening Google";
     speech.text = finalText;
+  } else if (message.includes("who are you")) {
+    const finalText = "my name is you me, inspired by Charles";
+    speech.text = finalText;
+  } else if (message.includes("who am i")) {
+    const finalText = "You are Chris";
+    speech.text = finalText;
   } else if (message.includes("open instagram")) {
     window.open(`https://instagram.com`, "_blank");
     const finalText = "opening Instagram";
