@@ -64,8 +64,38 @@ function speakThis(message) {
   } else if (message.includes("my name")) {
     const finalText = "you are Chris, of course";
     speech.text = finalText;
+    //////////////////////////
   } else if (message.includes("open google")) {
-    window.open(`https://www.google.com`, "_blank");
+    window.open(`https://google.com`, "_blank");
+    const finalText = "opening Google";
+    speech.text = finalText;
+  } else if (message.includes("open instagram")) {
+    window.open(`https://instagram.com`, "_blank");
+    const finalText = "opening Instagram";
+    speech.text = finalText;
+  } else if (message.includes("time")) {
+    const time = new Date().toLocaleString(undefined, { hour: "numeric", minute: "numeric" });
+    const finalText = time;
+    speech.text = finalText;
+  } else if (message.includes("date")) {
+    const date = new Date().toLocaleString(undefined, { month: "short", day: "numeric" });
+    const finalText = date;
+    speech.text = finalText;
+  } else if (message.includes("calculator")) {
+    window.open("Calculator:///");
+    const finalText = "opening calculator";
+    speech.text = finalText;
+
+    /////////////////
+  } else if (message.includes("what is") || message.includes("who is") || message.includes("what are")) {
+    window.open(`https://www.google.com/search?q=${message.replace(" ", "+")}`, "_blank");
+    const finalText = "This is what I found regarding " + message;
+    speech.text = finalText;
+  } else if (message.includes("wikipedia")) {
+    window.open(`https://en.wikipedia.org/wiki/${message.replace("wikipedia", "")}`, "_blank");
+    const finalText = "This is what I found on wikipedia regarding " + message;
+    speech.text = finalText;
+    //////////////////////////////////////////////////////////
   } else {
     window.open(`https://www.google.com/search?q=${message.replace(" ", "+")}`, "_blank");
     const finalText = "Opening page for " + message;
