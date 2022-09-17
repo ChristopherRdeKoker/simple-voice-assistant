@@ -1,12 +1,14 @@
 const btn = document.querySelector(".talk");
 const content = document.querySelector(".content");
 
+let startup = true;
+
 function speak(sentence) {
   const text_speak = new SpeechSynthesisUtterance(sentence);
 
   // text_speak.rate = 0.8;
   // text_speak.pitch = 0.8;
-  text_speak.rate = 0.7;
+  text_speak.rate = 0.9;
   text_speak.pitch = 0.1;
 
   window.speechSynthesis.speak(text_speak);
@@ -17,20 +19,24 @@ function wishMe() {
   let hr = day.getHours();
 
   if (hr >= 0 && hr < 12) {
-    speak("Good Morning sir");
+    speak("Good Morning");
   } else if (hr > 12 && hr < 17) {
-    speak("Good Afternoon sir");
+    speak("Good Afternoon");
   } else {
-    speak("Goodevening sir");
+    speak("Goodevening");
   }
 }
 
-window.addEventListener("load", () => {
-  speak("Activating you me");
-  // speak("One button to rule them all");
-
+window.addEventListener("click", (e) => {
+  if (startup === false) return;
+  e.preventDefault();
+  speak("Activating ooh mee");
   wishMe();
-  // speak("going online");
+  setTimeout(function () {
+    startup = false;
+  }, 1500);
+
+  // startup = false;
 });
 
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -52,7 +58,7 @@ function speakThis(message) {
 
   speech.text = "I did not understand, please try again";
 
-  if (message.includes("hey") || message.includes("hello")) {
+  if (message.includes("hey") || message.includes("hello") || message.includes("hi")) {
     const finalText = "good day Chris";
     speech.text = finalText;
   } else if (message.includes("how are you")) {
@@ -65,6 +71,10 @@ function speakThis(message) {
     const finalText = "you are Chris, of course";
     speech.text = finalText;
     //////////////////////////
+  } else if (message.includes("google maps")) {
+    window.open(`https://www.google.com/maps`, "_blank");
+    const finalText = "opening google maps";
+    speech.text = finalText;
   } else if (message.includes("open google")) {
     window.open(`https://google.com`, "_blank");
     const finalText = "opening Google";
@@ -101,6 +111,7 @@ function speakThis(message) {
     window.open(`https://en.wikipedia.org/wiki/${message.replace("wikipedia", "")}`, "_blank");
     const finalText = "This is what I found on wikipedia regarding " + message;
     speech.text = finalText;
+
     //////////////////////////////////////////////////////////
   } else {
     window.open(`https://www.google.com/search?q=${message.replace(" ", "+")}`, "_blank");

@@ -1,0 +1,29 @@
+@media screen and (min-width: 360px) and (max-width: 600px) {
+  section {
+    padding: 0;
+    margin: 0;
+    background-color: brown;
+  }
+
+  .main .input {
+    width: 320px;
+  }
+
+  .main .input .content {
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 500px) and (max-width: 900px) and (orientation: landscape) {
+  .main {
+    /* flex-direction: row; */
+  }
+  .main .image-container .image {
+    height: 180px;
+  }
+
+  body > section > div.image-container > h1 {
+    text-shadow: 2px 2px rgb(31, 60, 2);
+    text-shadow: 5px 5px rgb(13, 21, 4);
+  }
+}
